@@ -40,4 +40,10 @@ public class JobController {
     public void deletePost(@PathVariable("postId") int postId){
         service.deletePost(postId);
     }
+
+    @GetMapping("loadData")
+    public String loadData(){
+        service.loadData();
+        return "loaded...";
+    }
 }
