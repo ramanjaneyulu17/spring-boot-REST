@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class PerformanceMonitorAspect {
-    private static final Logger LOGGER= LoggerFactory.getLogger(LoggingAspect.class);
+    private static final Logger LOGGER= LoggerFactory.getLogger(PerformanceMonitorAspect.class);
 
-    @Around("execution(* com.example.spring_boot_rest.service.JobService.*(..))")
+    @Around("execution(* com.example.spring_boot_rest.service.JobService.getJobPost(..))")
     public Object monitorTime(ProceedingJoinPoint jp) throws Throwable {
         long start = System.currentTimeMillis();
         Object object = jp.proceed();
